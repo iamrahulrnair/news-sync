@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import NewsBox from './components/NewsBox';
-
 function App() {
   return (
     <div>
