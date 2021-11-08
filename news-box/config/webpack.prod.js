@@ -16,7 +16,7 @@ const prodConfig = {
       name: 'newsBox',
       filename: 'remoteEntry.js',
       exposes: {
-        './newsBox': './src/bootstrap',
+        './NewsBoxApp': './src/bootstrap',
       },
       shared: packageJSON.dependencies,
     }),
