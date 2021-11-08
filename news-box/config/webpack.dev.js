@@ -1,5 +1,6 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const packageJSON = require('../package.json');
 
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common');
@@ -22,7 +23,7 @@ const devConfig = {
       exposes: {
         './NewsBoxApp': './src/bootstrap',
       },
-      shared: ['react', 'react-dom'],
+      shared: packageJSON.dependencies,
     }),
   ],
 };
