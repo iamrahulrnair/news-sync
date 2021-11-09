@@ -11,7 +11,6 @@ function Landing() {
     const { data } = await doRequest();
     setArticles(data.news);
   }, []);
-  console.log(articles);
   if (articles.length == 0) {
     return <Loader />;
   }
