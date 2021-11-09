@@ -9,7 +9,7 @@ function Landing() {
   useEffect(async () => {
     const { doRequest } = useRequest();
     const { data } = await doRequest();
-    setArticles(data.data);
+    setArticles(data.news);
   }, []);
   console.log(articles);
   if (articles.length == 0) {
