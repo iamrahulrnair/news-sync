@@ -1,13 +1,12 @@
 import axios from 'axios';
 
 const _axios = axios.create({
-  baseURL: 'https://newsapi.org/v2/everything',
-  headers: {
-    Authorization: 'c261daf1d00146a78ee54d69356260d9',
-  },
+  baseURL: 'http://api.mediastack.com/v1/news',
   params: {
-    q: 'crypto',
-    language: 'en',
+    access_key: '21eb3b5f8b673500bd62fd7dd8144e9e',
+    category: 'technology',
+    languages: 'en',
+    keywords: 'cryptocurrency',
   },
 });
 export { _axios };

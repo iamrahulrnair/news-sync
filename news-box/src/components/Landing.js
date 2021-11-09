@@ -9,7 +9,7 @@ function Landing() {
   useEffect(async () => {
     const { doRequest } = useRequest();
     const { data } = await doRequest();
-    setArticles(data.articles);
+    setArticles(data.data);
   }, []);
   console.log(articles);
   if (articles.length == 0) {
@@ -17,10 +17,9 @@ function Landing() {
   }
   const renderNewsBox = () => {
     return articles.map((el, index) => {
-      return <div key={index}>{el.author}</div>;
+      return <div key={index}>{el.title}</div>;
     });
   };
   return <div>{renderNewsBox()}</div>;
 }
-
 export default Landing;
