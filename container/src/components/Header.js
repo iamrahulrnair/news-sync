@@ -1,17 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <nav className="flex flex-row  justify-between items-center h-20 bg-gray-400">
       <div className="mx-2">
-        <h1 className="text-4xl">NewSync</h1>
+        <Link to="/">
+          <h1 className="text-4xl">NewSync</h1>
+        </Link>
       </div>
       <div className="mx-16">
         <button className="btn flex justify-evenly items-center">
           <img
-            className="inline mx-1"
-            width="20px"
-            src="https://img.icons8.com/color/48/000000/google-logo.png"
+            width="30px"
+            src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-user-management-kiranshastry-gradient-kiranshastry-3.png"
           />
           Login
         </button>

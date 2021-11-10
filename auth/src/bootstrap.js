@@ -27,7 +27,7 @@ const mount = (el, { onNavigate, defaultHistory, initalPath }) => {
   };
 };
 if (process.env.NODE_ENV == 'development') {
-  const devRoot = document.querySelector('#_news_box');
+  const devRoot = document.querySelector('#_auth_local');
   if (devRoot) {
     mount(devRoot, { defaultHistory: createBrowserHistory() });
   }

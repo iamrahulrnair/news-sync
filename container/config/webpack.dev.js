@@ -12,6 +12,9 @@ const devConfig = {
       index: '/index.html',
     },
   },
+  output: {
+    publicPath: 'http://localhost:8080/',
+  },
   plugins: [
     new moduleFederationPlugin({
       name: 'container',
