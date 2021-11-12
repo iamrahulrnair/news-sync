@@ -10,13 +10,16 @@ export default function Header() {
         </Link>
       </div>
       <div className="mx-16">
-        <button className="btn flex justify-evenly items-center">
+        <Link
+          to="/auth/signin"
+          className="btn flex justify-evenly items-center"
+        >
           <img
             width="30px"
             src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-user-management-kiranshastry-gradient-kiranshastry-3.png"
           />
           Login
-        </button>
+        </Link>
       </div>
     </nav>
   );

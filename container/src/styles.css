@@ -23,3 +23,12 @@
 .btn:active {
   transform: translateY(1px);
 }
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.error-image {
+  max-width: 35%;
+}

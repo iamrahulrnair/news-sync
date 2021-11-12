@@ -8,18 +8,18 @@ const devConfig = {
   mode: 'development',
   devServer: {
     port: 8080,
-    historyApiFallback: {
-      index: '/index.html',
-    },
+    historyApiFallback: true,
   },
   output: {
     publicPath: 'http://localhost:8080/',
+    uniqueName: 'container',
   },
   plugins: [
     new moduleFederationPlugin({
       name: 'container',
       remotes: {
-        newsBox: 'newsBox@http://localhost:8081/remoteEntry.js',
+        auth: 'auth@http://localhost:8082/remoteEntry.js',
+        newsbox: 'newsbox@http://localhost:8081/remoteEntry.js',
       },
       shared: packageJSON.dependencies,
     }),
