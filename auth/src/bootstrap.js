@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { createMemoryHistory, createBrowserHistory } from 'history';
-
-import './styles.css';
+import('./styles.css');
 
 const mount = (el, { onNavigate, defaultHistory, initalPath }) => {
   const history =
