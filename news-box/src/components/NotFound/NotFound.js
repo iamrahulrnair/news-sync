@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="error-container">
       <h1 className="error-heading text-8xl">NotFound 404</h1>
-      <img className="error-image" src="/NotfoundBro.png"></img>
+      <img className="error-image" src="NotfoundBro.png"></img>
     </div>
   );
 }

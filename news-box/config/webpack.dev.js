@@ -7,21 +7,20 @@ const commonConfig = require('./webpack.common');
 
 const devConfig = {
   mode: 'development',
-  devServer: {
-    port: 8081,
-    historyApiFallback: {
-      index: '/index.html',
-    },
-  },
   output: {
     publicPath: 'http://localhost:8081/',
+    uniqueName: 'news-box',
+  },
+  devServer: {
+    port: 8081,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
     new ModuleFederationPlugin({
-      name: 'newsBox',
+      name: 'newsbox',
       filename: 'remoteEntry.js',
       exposes: {
         './NewsBoxApp': './src/bootstrap',
