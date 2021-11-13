@@ -13,7 +13,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'newsBox',
+      name: 'newsbox',
       filename: 'remoteEntry.js',
       exposes: {
         './NewsBoxApp': './src/bootstrap',
