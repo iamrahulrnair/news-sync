@@ -1,36 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import faker from 'faker';
-
 import LoginIcon from '@mui/icons-material/Login';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import CloseIcon from '@mui/icons-material/Close';
 
-export default function Header({ isSignedIn, onSignOut }) {
+export default function SideBar({ show, setShow, isSignedIn, onSignOut }) {
   const signout = () => {
     if (isSignedIn && onSignOut) {
       onSignOut();
     }
   };
   return (
-    <nav className="flex backdrop-filter backdrop-blur-sm bg-gray-900 bg-opacity-50 flex-row sticky top-0 z-50  justify-between items-center h-20">
-      <div className="mx-2">
-        <Link to="/">
-          <h1 className="text-5xl hover:text-white duration-200 ">NewSync</h1>
-        </Link>
-      </div>
-      {
-        <div className="flex justify-center items-center">
-          <img
-            className="rounded-full flex items-center justify-center"
-            width="60px"
-            src={faker.image.avatar()}
-          ></img>
-          <p className="ml-5 font-light antialiased">
-            <span className="animate-pulse">Hey</span>, {faker.name.findName()}
-          </p>
-        </div>
-      }
+    <div className={show ? 'side-bar active' : 'side-bar'}>
+      <button onClick={() => setShow(false)}>
+        <CloseIcon />
+      </button>
+      <ul>
+        <li>login</li>
+        <li>home</li>
+        <li>about</li>
+        <li>settings</li>
+        <li>clear</li>
+      </ul>
       <div className="mx-16 flex">
         {isSignedIn && (
           <Link
@@ -51,6 +43,6 @@ export default function Header({ isSignedIn, onSignOut }) {
           <span className="text-sm">{isSignedIn ? 'Logout' : 'Login'}</span>
         </Link>
       </div>
-    </nav>
+    </div>
   );
 }

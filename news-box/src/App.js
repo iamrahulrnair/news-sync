@@ -7,7 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 
 function App({ history }) {
   return (
-    <div>
+    <div className="container">
       <Router history={history}>
         <Switch>
           <Route exact path="/settings" component={Setting} />

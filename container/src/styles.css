@@ -3,7 +3,7 @@
 @tailwind utilities;
 :root {
   --primary: #fee440;
-  --black: rgb(0, 0, 0);
+  --black: rgba(0, 0, 0, 0.665);
 }
 .btn {
   border: #fff 1px solid;
