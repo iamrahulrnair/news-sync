@@ -5,13 +5,17 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import NotFound from './components/NotFound/NotFound';
 
-function App({ history }) {
+function App({ history, onSignin }) {
   return (
     <div>
       <Router history={history}>
         <Switch>
-          <Route exact path="/auth/signin" component={SignIn} />
-          <Route exact path="/auth/signup" component={SignUp} />
+          <Route exact path="/auth/signin">
+            <SignIn onSignin={onSignin} />
+          </Route>
+          <Route exact path="/auth/signup">
+            <SignUp onSignin={onSignin} />
+          </Route>
           <Route component={NotFound} />
         </Switch>
       </Router>
