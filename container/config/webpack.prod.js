@@ -16,6 +16,7 @@ const prodConfig = {
       name: 'container',
       remotes: {
         newsBox: `newsBox@${domain}/newsbox/latest/remoteEntry.js`,
+        auth: `auth@${domain}/auth/latest/remoteEntry.js`,
       },
       shared: packageJSON.dependencies,
     }),
