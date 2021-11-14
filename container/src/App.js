@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Reachme from './components/ReachmeApp';
+import { renderPlaceHolder } from './components/Loaders/PlaceHolderScreen';
 // import NewsBox from './components/NewsBox';
 // import AuthApp from './components/AuthApp';
 
@@ -22,7 +23,7 @@ function App() {
           onSignOut={() => setSignedIn(!isSignedIn)}
           isSignedIn={isSignedIn}
         />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{renderPlaceHolder}</div>}>
           <Switch>
             <Route path="/auth">
               <AuthAppLazy onSignIn={() => setSignedIn(true)} />
