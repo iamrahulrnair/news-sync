@@ -16,5 +16,9 @@ export const renderPlaceHolder = new Array(16)
     </div>
   )
   .map((el, ind) => {
-    return <div className={ind}>{el}</div>;
+    return (
+      <div key={ind} className={ind}>
+        {el}
+      </div>
+    );
   });

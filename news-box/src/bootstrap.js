@@ -5,7 +5,7 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 
 import './styles.css';
 
-const mount = (el, { onNavigate, defaultHistory, initalPath }) => {
+const mount = (el, { onNavigate, defaultHistory, initalPath, isSignedIn }) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
@@ -15,7 +15,7 @@ const mount = (el, { onNavigate, defaultHistory, initalPath }) => {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App history={history} isSignedIn={isSignedIn} />, el);
 
   return {
     onParentNavigate({ pathname: nextPathname }) {

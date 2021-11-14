@@ -19,6 +19,12 @@ module.exports = {
         include: path.resolve(__dirname, '../src'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
     ],
   },
 };
