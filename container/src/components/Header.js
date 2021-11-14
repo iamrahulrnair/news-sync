@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import faker from 'faker';
+
+import faker from 'faker/locale/en_IND';
 
 import LoginIcon from '@mui/icons-material/Login';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -13,13 +14,13 @@ export default function Header({ isSignedIn, onSignOut }) {
     }
   };
   return (
-    <nav className="flex backdrop-filter backdrop-blur-sm bg-gray-900 bg-opacity-50 flex-row sticky top-0 z-50  justify-between items-center h-20">
+    <nav className="flex backdrop-filter backdrop-blur-sm bg-gray-900 bg-opacity-50 flex-row sticky top-0 z-50  justify-between items-center h-20 w-full">
       <div className="mx-2">
         <Link to="/">
           <h1 className="text-5xl hover:text-white duration-200 ">NewSync</h1>
         </Link>
       </div>
-      {
+      {isSignedIn && (
         <div className="flex justify-center items-center">
           <img
             className="rounded-full flex items-center justify-center"
@@ -27,10 +28,11 @@ export default function Header({ isSignedIn, onSignOut }) {
             src={faker.image.avatar()}
           ></img>
           <p className="ml-5 font-light antialiased">
-            <span className="animate-pulse">Hey</span>, {faker.name.findName()}
+            <span className="animate-pulse">Hey</span>,
+            <span className="text-white"> {faker.name.findName()}</span>
           </p>
         </div>
-      }
+      )}
       <div className="mx-16 flex">
         {isSignedIn && (
           <Link

@@ -2,7 +2,7 @@ import { mount } from 'newsbox/NewsBoxApp';
 import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function NewsBox() {
+export default function NewsBox({isSignedIn}) {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -16,6 +16,7 @@ export default function NewsBox() {
           history.push(nextPathname);
         }
       },
+      isSignedIn
     });
     history.listen(onParentNavigate);
   }, []);

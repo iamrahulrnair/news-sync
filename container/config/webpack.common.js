@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   module: {
@@ -15,11 +14,6 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve(__dirname, '../src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },

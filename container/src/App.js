@@ -2,6 +2,8 @@ import React, { lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
+import Reachme from './components/ReachmeApp';
 // import NewsBox from './components/NewsBox';
 // import AuthApp from './components/AuthApp';
 
@@ -16,17 +18,22 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Header onSignOut={() => setSignedIn(false)} isSignedIn={isSignedIn} />
+        <Header
+          onSignOut={() => setSignedIn(!isSignedIn)}
+          isSignedIn={isSignedIn}
+        />
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route path="/auth">
               <AuthAppLazy onSignIn={() => setSignedIn(true)} />
             </Route>
             <Route path="/">
-              <NewsBoxLazy onSignIn={() => setSignedIn(true)} />
+              <NewsBoxLazy isSignedIn={isSignedIn} />
             </Route>
           </Switch>
         </Suspense>
+        <Reachme />
+        <Footer />
       </div>
     </BrowserRouter>
   );

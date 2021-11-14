@@ -17,6 +17,7 @@ const prodConfig = {
       remotes: {
         newsbox: `newsbox@${domain}/newsbox/latest/remoteEntry.js`,
         auth: `auth@${domain}/auth/latest/remoteEntry.js`,
+        reachme: `reachme@${domain}/reachme/latest/remoteEntry.js`,
       },
       shared: packageJSON.dependencies,
     }),

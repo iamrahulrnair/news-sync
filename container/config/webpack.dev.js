@@ -18,8 +18,9 @@ const devConfig = {
     new moduleFederationPlugin({
       name: 'container',
       remotes: {
-        auth: 'auth@http://localhost:8082/remoteEntry.js',
         newsbox: 'newsbox@http://localhost:8081/remoteEntry.js',
+        auth: 'auth@http://localhost:8082/remoteEntry.js',
+        reachme: 'reachme@http://localhost:8083/remoteEntry.js',
       },
       shared: packageJSON.dependencies,
     }),
