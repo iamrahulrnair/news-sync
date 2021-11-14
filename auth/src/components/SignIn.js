@@ -7,7 +7,8 @@ export default function SignIn({ onSignin }) {
       <div className="relative py-3 w-96 sm:max-auto text-grey-800 antialiased text-center ">
         <span className="text-2xl font-light">Login to you account</span>
         <div className="mt-4 bg-white shadow-md rounded-lg text-left">
-          <div className="h-2 bg-indigo-400 rounded-t-md"></div>
+          <div className="h-2 bg-yellow-400 rounded-t-md "></div>
+
           <div className="px-8 py-6">
             <label className="block font-semi-bold">Username or Email</label>
             <input
@@ -27,7 +28,7 @@ export default function SignIn({ onSignin }) {
                   onSignin();
                 }}
                 type="submit"
-                className="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-md hover:bg-indigo-600 "
+                className="mt-4 bg-gray-500 text-white py-2 px-6 rounded-md hover:bg-gray-600"
               >
                 Login
               </Link>
