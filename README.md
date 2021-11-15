@@ -8,4 +8,7 @@ A micro front-end application with 4 front-end services which are decoupled from
 
 check out [NewSync](https://d10zs3wtfmumcd.cloudfront.net/) here.
 
+check out [How to configure tailwind in webpack](https://medium.com/@iamrahulrnair/how-i-configured-tailwind-in-webpack-for-my-micro-front-end-application-8f0412978bc5) here.
+
+
 > **Read more about each services in the corresponding directories**
